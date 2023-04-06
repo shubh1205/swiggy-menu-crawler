@@ -1,5 +1,6 @@
-logs/
-csv_data_store/
+*.log
+*.tsv
+.~lock*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

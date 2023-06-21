@@ -43,7 +43,8 @@ class Crawler():
     def fetch_data(self):
         self.logger.info('Fetching API data')
         url = self.base_url + self.restaurant_id
-        response = requests.get(url)
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'}
+        response = requests.get(url, verify=False, headers=headers)
         if response.status_code != 200:
             raise Exception(f'Unable to fetch data {response.status_code}')
         
